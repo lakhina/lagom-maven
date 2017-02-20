@@ -18,7 +18,7 @@ public interface HelloService extends Service {
   /**
    * Example: curl http://localhost:9000/api/hello/Alice
    */
-  ServiceCall<NotUsed, String> hello(String id);
+  ServiceCall<NotUsed, Greet> hello(String id);
 
   @Override
   default Descriptor descriptor() {

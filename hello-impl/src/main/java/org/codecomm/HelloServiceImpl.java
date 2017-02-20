@@ -9,8 +9,12 @@ import java.util.concurrent.CompletableFuture;
 public class HelloServiceImpl implements HelloService {
 
     @Override
-    public ServiceCall<NotUsed, String> hello(String id) {
-        return request -> CompletableFuture.completedFuture("Hello " + id);
+    public ServiceCall<NotUsed, Greet> hello(String id) {
+        return request ->
+        {
+            Greet greet = new Greet("Hindi", "Namaste "+id);
+            return CompletableFuture.completedFuture(greet);
+        };
     }
 
 }
